@@ -20,5 +20,4 @@ C:\Users\Raido\Documents\WP8\TodoApp\TodoApp\obj\Debug\TodoDetails.g.cs
 C:\Users\Raido\Documents\WP8\TodoApp\TodoApp\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
 C:\Users\Raido\Documents\WP8\TodoApp\TodoApp\obj\Debug\TodoAdd.g.cs
 C:\Users\Raido\Documents\WP8\TodoApp\TodoApp\obj\Debug\TodoModify.g.cs
-C:\Users\Raido\Documents\WP8\TodoApp\TodoApp\obj\Debug\TodoApp.csprojResolveAssemblyReference.cache
 C:\Users\Raido\Documents\WP8\TodoApp\TodoApp\obj\Debug\Completed.g.cs

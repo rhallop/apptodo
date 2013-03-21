@@ -42,16 +42,29 @@ namespace TodoApp
             DateTime todoTime = tpicker.Value.Value;
             DateTime deadline = new DateTime(todoDate.Year, todoDate.Month, todoDate.Day, todoTime.Hour, todoTime.Minute, todoTime.Second);
 
+            try
+            {
+                ScheduledActionService.Remove(App.TodoViewModel.findTodoById(todoid).Title);
+            }
+            catch
+            {
+
+            }
+
             App.TodoViewModel.findTodoById(todoid).Title = tbtitle.Text;
             App.TodoViewModel.findTodoById(todoid).Content = tbcontent.Text;
             App.TodoViewModel.findTodoById(todoid).Deadline = deadline;
             App.TodoViewModel.findTodoById(todoid).Category = lpicker.SelectedItem.ToString();
 
-            ScheduledActionService.Remove(App.TodoViewModel.findTodoById(todoid).Title);
-            Reminder rem = new Reminder(App.TodoViewModel.findTodoById(todoid).Title);
-            rem.BeginTime = deadline;
-            ScheduledActionService.Add(rem);
-
+            try
+            {
+                Reminder rem = new Reminder(App.TodoViewModel.findTodoById(todoid).Title);
+                rem.BeginTime = deadline;
+                ScheduledActionService.Add(rem);
+            }
+            catch
+            {
+            }
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
     }

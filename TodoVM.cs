@@ -71,8 +71,14 @@ namespace TodoApp
         public void markTodoAsDone(int id)
         {
             findTodoById(id).IsDone = true;
-            ScheduledActionService.Remove(findTodoById(id).Title);
+            try
+            {
+                ScheduledActionService.Remove(findTodoById(id).Title);
+            }
+            catch
+            {
 
+            }
         }
     }
 }

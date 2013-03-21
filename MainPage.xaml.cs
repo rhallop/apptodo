@@ -61,7 +61,8 @@ namespace TodoApp
 
         private void Mark_Click(object sender, RoutedEventArgs e)
         {
-            int index = lbtodos.Items.IndexOf((sender as MenuItem).DataContext);
+            //int index = lbtodos.Items.IndexOf((sender as MenuItem).DataContext);
+            int index = ((Todo)(sender as MenuItem).DataContext).Id;
             //App.TodoViewModel.listTodo[index].IsDone = true;
             App.TodoViewModel.markTodoAsDone(index);
             lbtodos.ItemsSource = App.TodoViewModel.todosNotDone();
